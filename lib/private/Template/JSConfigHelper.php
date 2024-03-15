@@ -16,6 +16,7 @@ use OCP\App\IAppManager;
 use OCP\Authentication\Exceptions\ExpiredTokenException;
 use OCP\Authentication\Exceptions\InvalidTokenException;
 use OCP\Authentication\Exceptions\WipeTokenException;
+use OCP\Authentication\Token\IToken;
 use OCP\Constants;
 use OCP\Defaults;
 use OCP\Files\FileInfo;
@@ -285,6 +286,6 @@ class JSConfigHelper {
 			return false;
 		}
 		$scope = $token->getScopeAsArray();
-		return isset($scope['sso-based-login']) && $scope['sso-based-login'] === true;
+		return isset($scope[IToken::SCOPE_SKIP_PASSWORD_VALIDATION]) && $scope[IToken::SCOPE_SKIP_PASSWORD_VALIDATION] === true;
 	}
 }
