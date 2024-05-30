@@ -48,10 +48,13 @@ abstract class AbstractNodeEvent extends Event implements \JsonSerializable {
 		return $this->node;
 	}
 
+	/**
+	 * @since 30.0.0
+	 */
 	public function jsonSerialize(): array {
 		return [
 			'class' => static::class,
-			'node' => JsonSerializer::serializeNode($this->node),
+			'node' => JsonSerializer::serializeFileInfo($this->node),
 		];
 	}
 }

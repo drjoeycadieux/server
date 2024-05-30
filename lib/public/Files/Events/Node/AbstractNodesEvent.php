@@ -56,11 +56,14 @@ abstract class AbstractNodesEvent extends Event {
 		return $this->target;
 	}
 
+	/**
+	 * @since 30.0.0
+	 */
 	public function jsonSerialize(): array {
 		return [
 			'class' => static::class,
-			'source' => JsonSerializer::serializeNode($this->source),
-			'target' => JsonSerializer::serializeNode($this->target),
+			'source' => JsonSerializer::serializeFileInfo($this->source),
+			'target' => JsonSerializer::serializeFileInfo($this->target),
 		];
 	}
 }
