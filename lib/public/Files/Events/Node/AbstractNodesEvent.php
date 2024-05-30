@@ -26,6 +26,7 @@ declare(strict_types=1);
 namespace OCP\Files\Events\Node;
 
 use OCP\EventDispatcher\Event;
+use OCP\EventDispatcher\JsonSerializer;
 use OCP\Files\Node;
 
 /**
@@ -53,5 +54,13 @@ abstract class AbstractNodesEvent extends Event {
 	 */
 	public function getTarget(): Node {
 		return $this->target;
+	}
+
+	public function jsonSerialize(): array {
+		return [
+			'class' => static::class,
+			'source' => JsonSerializer::serializeNode($this->source),
+			'target' => JsonSerializer::serializeNode($this->target),
+		];
 	}
 }
