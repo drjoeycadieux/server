@@ -143,7 +143,7 @@ Files: vendor-bin/*/composer.json vendor-bin/*/composer.lock
 Copyright: 2021 Nextcloud GmbH and Nextcloud contributors
 License: AGPL-3.0-or-later
 
-Files: apps/user_ldap/img/app-dark.svg apps/user_ldap/img/app.svg  apps/comments/img/comments-dark.svg apps/comments/img/comments.svg
+Files: apps/user_ldap/img/app-dark.svg apps/user_ldap/img/app.svg  apps/comments/img/comments-dark.svg apps/comments/img/comments.svg apps/files_versions/img/app-dark.svg apps/files_versions/img/app.svg apps/files_trashbin/img/app-dark.svg apps/files_trashbin/img/app.svg
 Copyright: 2018-2024 Google LLC
 License: Apache-2.0
 
